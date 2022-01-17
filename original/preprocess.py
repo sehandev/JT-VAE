@@ -72,8 +72,8 @@ if __name__ == '__main__':
     split_length = (len(all_data) + args.num_splits - 1) // args.num_splits
 
     for split_index in range(args.num_splits):
-        st = split_index * split_length
-        sub_data = all_data[st:st+split_length]
+        start_index = split_index * split_length
+        sub_data = all_data[start_index: start_index + split_length]
 
-        with open('pkl/tensors-%d.pkl' % split_index, 'wb') as f:
-            pickle.dump(sub_data, f, pickle.HIGHEST_PROTOCOL)
+        with open(f'pkl/tensors-{split_index}.pkl', 'wb') as pickle_file:
+            pickle.dump(sub_data, pickle_file, pickle.HIGHEST_PROTOCOL)
