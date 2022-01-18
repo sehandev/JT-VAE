@@ -75,5 +75,5 @@ if __name__ == '__main__':
         start_index = split_index * split_length
         sub_data = all_data[start_index: start_index + split_length]
 
-        with open(f'pkl/tensors-{split_index}.pkl', 'wb') as pickle_file:
+        with open(f'moses-processed/tensors-{split_index}.pkl', 'wb') as pickle_file:
             pickle.dump(sub_data, pickle_file, pickle.HIGHEST_PROTOCOL)
